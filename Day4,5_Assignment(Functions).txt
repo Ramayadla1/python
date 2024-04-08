@@ -1,0 +1,61 @@
+# Write a function that takes two numbers as input and returns their sum.
+
+def sum(a,b):
+    """sum- calculating the sum of 2 numbers
+    a,b
+    takes 2 values and returns the sum of a,b
+    """
+   return a+b
+
+s=sum(1,2)
+print(s)
+#Write a function that takes a list as input and returns the second largest number in the list.
+def largest(list1):
+    list1.sort(reverse=True)
+    list1=list1[1]
+    return list1
+    
+list1=[int(i) for i in input("Enter list of numbers: \n").split()]
+print(largest(list1))
+ 
+(or)
+
+def second_largest_num(list2):
+    m=max(list2)
+    list2.remove(m)
+    return max(list2)
+list2=[int(i) for i in input("Enter list of numbers: \n").split()]
+print(second_largest_num(list2))
+
+
+
+#Write a function that takes a list of numbers as input and returns the list sorted in ascending order.
+def sorting(list1):
+    list1.sort()
+    return list1
+    
+list1=[int(i) for i in input("Enter the list of numbers:\n").split()]
+print(sorting(list1))
+
+#Write a function that takes a list of words as input and returns the most frequently occurring word.
+def sorting(list1):
+    c=0
+    for i in list1:
+       m= list1.count(i)
+       if(m>c):
+           c=m
+           s=i
+    return s
+    
+list1=input("Enter the list of numbers:\n").split()
+print(sorting(list1))
+
+#Write a function that takes a list of lists as input and returns a list of the first elements of each sublist.
+
+def func(l):
+    return l[0] 
+
+l=[[1,2,3],[4,5,6],[7,8,9],[10,11,12]]
+for i in l:
+    l1=func(i)
+    print(l1)

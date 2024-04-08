@@ -1,0 +1,160 @@
+#Write a program that prompts the user to enter a number and prints whether it is even or odd.
+
+num=int(input("Enter a number to print even & odd numbers alone:\n"))
+if(num%2==0):
+ print("The given number %d is even" % num)
+else:
+ print("The given number %d is odd" % num)
+
+''' Output:
+Enter a number to print even & odd numbers alone:
+7
+The given number 7 is odd
+'''
+
+#Write a program that prints all the even numbers between 1 and 100.
+
+a=int(input("Enter the range:\n"))
+for i in range(1,a):
+ if(i%2==0):
+    print(i)
+
+''' Output:
+Enter the range:
+100
+2
+4
+6
+8
+.... '''
+
+
+#Write a program that finds the largest number among three numbers entered by the user.
+
+a,b,c = map(int,input("Enter 3 values:\n").split())
+largest=a
+if(b>c):
+    largest=b
+else:
+    largest=c
+print('The Largest number is:' ,largest)
+
+''' Output:
+Enter 3 values:
+4 8 2
+The Largest number is: 8'''
+
+
+#Write a program that takes a list of numbers as input and returns the list sorted in ascending order.
+
+def sortedList(num):
+    num.sort()
+    return num
+num=[7,3,6,9,2,8,1]
+print(sortedList(num))
+
+'''Output:
+[1, 2, 3, 6, 7, 8, 9] '''
+
+
+
+#Write a program that takes a list of numbers as input and returns the list sorted in descending order using recursion.
+
+def sorting(num):
+    if not num:
+        return num
+    temp=[]
+    while num:
+        max_val=max(num)
+        temp.append(max_val)
+        num.remove(max_val)
+    return temp
+num=[5,3,0,6,8,9,12]
+temp=sorting(num)
+print(temp)
+
+''' Output:
+[12, 9, 8, 6, 5, 3, 0] '''
+
+
+#Write a program that reverses a string entered by the user.
+
+a=input("Please Enter the string:\n") # using string slice method
+print(a[::-1])
+
+#or
+
+a=input("Please Enter the string:\n")
+rev=''
+for i in a:
+    rev=i+rev
+print(rev)
+''' Output:
+Please Enter the string:
+ramya
+aymar'''
+
+#Write a program that checks if a string entered by the user is a palindrome.
+
+str1=input('Enter a string: \n')
+s=str1[::-1]
+if(str1==s):
+    print("Given string is Palindrome.", str1)
+else:
+    print("Given string is not a palindrome.", str1)
+
+''' Output:
+Enter a string: 
+saas
+Given string is Palindrome. saas '''
+
+#Write a program that removes all vowels from a string entered by the user.
+
+str=input('Enter a string: \n')
+for a in str:
+    if(a=='a' or a=='e' or a=='i' or a=='o' or a=='u' or a=='A' or a=='E' or a=='I' or a=='O' or a=='U'):
+        str=str.replace(a,'')
+print(str)
+
+''' Output:
+Enter a string: 
+Icecream
+ccrm '''
+
+#Write a program that takes a list of words as input and returns the most frequently occurring word.
+
+
+words=[str(i) for i in input("enter the words:\n").split()]
+most_occured_word=''
+max_count=0
+for i in words:
+    count=words.count(i)
+    if(count>max_count):
+        max_count=count
+        most_occured_word=i
+print(most_occured_word)
+
+''' Output:
+enter the words:
+rama sasi rama rama sasi jay jaykishore
+rama '''
+
+
+#Write a program that takes a list of words as input and returns the longest word in the list.
+
+str=[i for i in input('Enter the words \n ').split()]
+longest_str=str[0]
+longest_word=''
+for a in range(len(str)):
+    if(len(str[a])>len(longest_str)):
+        longest_word=str[a]
+print('The longest word is: ', longest_word)
+
+''' Output:
+Enter the words 
+ apple samsung nokia 
+The longest word is:  samsung'''
+
+
+
+

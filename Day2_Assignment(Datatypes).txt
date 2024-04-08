@@ -1,0 +1,61 @@
+#Write a program that converts a string to an integer and vice versa.
+x='123'
+p=10
+print('Before conversion',type(x),x)
+y=int(x)
+print('After convertion of String to Int',type(y),y)
+print('Before coversion',type(p),p)
+q=str(p)
+print('After convertion of Int to String',type(q),q)
+
+'''Output:
+Before conversion <class 'str'> 123
+After convertion of String to Int <class 'int'> 123
+Before coversion <class 'int'> 10
+After convertion of Int to String <class 'str'> 10 '''
+
+#Write a program that calculates the average of three numbers entered by the user.
+a=int(input("please enter a value: "))
+b=int(input("please enter b value: "))
+c=int(input("please enter c value: "))
+average=a+b+c/3
+print('Average of 3 numbers is:',average)
+
+''' Output:
+please enter a value: 5
+please enter b value: 4
+please enter c value: 3
+Average of 3 numbers is: 10.0 '''
+
+#Write a program that converts a temperature from Celsius to Fahrenheit and vice versa.
+#Submitted yesterday 
+
+#Write a program that finds the largest number among three numbers entered by the user.
+a=int(input("please enter a value: "))
+b=int(input("please enter b value: "))
+c=int(input("please enter c value: "))
+largest= a if(a>b and a>c) else(b if (b>c) else c)
+print('Largest value is:', largest)
+
+'''Output:
+
+please enter a value: 2
+please enter b value: 7
+please enter c value: 8
+Largest value is: 8 '''
+
+#Write a program that takes a list of numbers as input and returns the mode (the most frequently occurring number) of the list.
+list=[1,1,2,2,3,2,3,4,5]
+max_ocr=0
+most_ocr=0
+for num in list:
+    c=0
+    for n in list:
+        if(n==num):
+            c+=1
+    if(c>max_ocr):
+        max_ocr=c
+        most_ocr=num
+print('most frequently occurring number is:',most_ocr)
+'''Output:
+most frequently occurring number is: 2 '''

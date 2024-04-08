@@ -1,0 +1,106 @@
+
+#Write a program that raises an exception when the user enters a non-numeric value.
+def numeric_value():
+    i=input("Please enter number:\n")
+    numeric=float(i)
+    print(int(numeric))
+        
+numeric_value()
+
+'''Output:
+Please enter number:
+s
+ERROR!
+Traceback (most recent call last):
+  File "<main.py>", line 29, in <module>
+  File "<main.py>", line 26, in numeric_value
+ValueError: could not convert string to float: 's'
+'''
+
+#Write a program that catches the exception raised in the previous assignment and prints an error message.
+class EmptyListException(Exception):
+    pass
+def sorting(list1):
+    try:
+        if(not(list1==[])):
+            list1.sort()
+            print(list1)
+        else:
+            raise EmptyListException
+    except EmptyListException as e:
+        print(f"EmptyListException: Given list is empty. Please Enter atleast 1 value.{e}")
+    
+list1=[int(i) for i in input("Enter the list of numbers:\n").split()]
+sorting(list1)
+
+''' Output:
+Enter the list of numbers:
+
+EmptyListException: Given list is empty. Please Enter atleast 1 value.
+''''
+
+#Write a program that raises an exception when the user tries to withdraw more money than their account balance.
+
+class Insufficient_Balance(Exception):
+    pass
+money=int(input("Enter money:"))
+e=""
+try:
+    if(money>2000):
+      raise Insufficient_Balance
+    else:
+        print("Successfully withdraw the amount-", money)
+except(Insufficient_Balance):
+    print(f"Insufficient Balance(Entered amount {money} is more than the balance amount)")
+
+''' Output:
+Enter money:2000
+Successfully withdraw the amount- 2000
+----------
+Enter money:5000
+Insufficient Balance(Entered amount 5000 is more than the balance amount)
+'''
+
+#Write a program that raises an exception when the user enters a negative number as input.
+class NegativeValueError(Exception):
+    pass
+number=int(input("Enter a positive number:\n"))
+try:
+     if(number<0):
+         raise NegativeValueError
+     else:
+         print(number)
+except NegativeValueError:
+    print(f"NegativeValueError: You entered negative value {number}")
+
+''' Output:
+Enter a positive number:
+-8
+ERROR!
+NegativeValueError: You entered negative value -8
+'''
+
+#Write a program that raises an exception when the user enters an invalid email address.
+
+def is_valid_email(email):
+    if '@' not in email or email.startswith('@') or email.endswith('@'):
+        return False
+    if ('$' or '*' or '%' or '#') in email:
+        return False
+    if(len(email)<5):
+        return False
+    return True
+try:
+    a=input("Enter your email id: \n")
+    if is_valid_email(a):
+        print(a)
+    else:
+        raise ValueError("Invalid Email address")
+except ValueError as e:
+    print("Error-", e)
+        
+'''Output:
+Enter your email id: 
+rama$devi@gmail.com
+Error- Invalid Email address '''
+
